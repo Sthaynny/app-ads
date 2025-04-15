@@ -1,89 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="pt">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.6.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.6.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.6.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igor Sthaynny</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25231.png" type="image/png">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Barra de Navegação Superior -->
+    <div class="navbar-top">
+        <div class="title">
+            <h1>Igor Sthaynny</h1>
+        </div>
+
+        <!-- Barra de Navegação -->
+        <ul>
+            <li>
+                <a href="#message">
+                    <span class="icon-count">29</span>
+                    <i class="fa fa-envelope fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#notification">
+                    <span class="icon-count">59</span>
+                    <i class="fa fa-bell fa-2x"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#sign-out">
+                    <i class="fa fa-sign-out-alt fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- Fim -->
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- Fim -->
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!-- Barra Lateral -->
+    <div class="sidenav">
+        <div class="profile">
+            <img src="https://avatars.githubusercontent.com/u/46109133?v=4" alt="" width="100" height="100">
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+            <div class="name">
+                Igor Sthaynny
+            </div>
+            <div class="job">
+                Desenvolvedor Mobile Sênior
+            </div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a href="#profile" class="active">Perfil</a>
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a href="#settings">Configurações</a>
+                <hr align="center">
+            </div>
+        </div>
+    </div>
+    <!-- Fim -->
+
+    <!-- Conteúdo Principal -->
+    <div class="main">
+        <h2>Perfil</h2>
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit"></i>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px 0;">Nome</td>
+                            <td style="padding: 15px 0;">:</td>
+                            <td style="padding: 15px 0;">Igor Sthaynny</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 0;">Email</td>
+                            <td style="padding: 15px 0;">:</td>
+                            <td style="padding: 15px 0;">igorsthaynny@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 0;">Sobre</td>
+                            <td style="padding: 15px 0;">:</td>
+                            <td style="padding: 15px 0;">Líder técnico e desenvolvedor mobile sênior, especializado em Flutter e Swift, com experiência na gestão de times e evolução tecnológica de projetos de grande porte. Atuo impulsionando boas práticas de arquitetura, Clean Code e SOLID, garantindo soluções escaláveis e de alta performance. Com foco em colaboração, mentoria e processos ágeis, busco otimizar fluxos de trabalho, elevar a qualidade das entregas e promover a inovação dentro das equipes.</td>
+                        </tr>
+                         
+                        <tr>
+                            <td style="padding: 15px 0;">Habilidades</td>
+                            <td style="padding: 15px 0;">:</td>
+                            <td style="padding: 15px 0;">
+                                 ✅ Desenvolvimento de apps Android e iOS com Flutter<br>
+                                 ✅ Gerenciamento de estado com Cubit (Bloc)<br>
+                                 ✅ Arquitetura limpa, MVVM, conceitos de SOLID e Clean Code e Micro-frontends<br>
+                                 ✅ Versionamento de código (Git) e code review<br>
+                                 ✅ Testes automatizados e otimização de performance<br>
+                                 ✅ CI/CD, homologações e melhorias contínuas<br>
+                                 ✅ Integração com Firebase, Fastlane e automação de builds<br>
+                                 ✅ Requisições na nuvem (API REST), busca de dados para a aplicação em um servidor<br>
+                                 ✅ Utilização de Banco de dados não relacional (Firebase) e Relacional (SQLite)<br>
+                                 ✅ Evolução de apps antigos para novas arquiteturas<br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h2>MÍDIAS SOCIAIS</h2>
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit"></i>
+                <div class="social-media">
+                    
+                    <a href="https://linkedin.com/in/igor-sthaynny/" target="_blank">
+                        <span class="fa-stack fa-sm">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="https://github.com/Sthaynny" target="_blank">
+                        <span class="fa-stack fa-sm">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim -->
+</body>
+
 </html>
